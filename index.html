@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">    <!-- A largura da página será igual a largura do dispositivo -->
+    <title>SMN Music Player</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</head>
+
+<body onresize="responsivo()">
+    <header class="cabecalho">      <!-- Cabeçalho com o logo -->
+        <a href="index.html">
+            <img class="logo" src="img/logo.png"><h1>PLAYER</h1>
+        </a>
+    </header>
+    <div class="menu-bar">      <!-- Barra de menu com os botoes musicas e playlists -->
+        <button class="btn" onclick="openSlideMenuL()">     <!-- Botão que mostra lista de músicas (esquerda) -->
+            <i class="fas fa-music fa-lg"></i>
+        </button>
+        <button class="btn" onclick="openSlideMenuR()">     <!-- Botão que mostra lista de playlists (direita) -->
+            <i class="fas fa-bars fa-lg"></i>
+        </button>
+    </div>
+    <div id="m0Modal" class="modal">    <!-- Modal com informações da música -->
+        <div class="modal-content">
+            <h1>Arctic Monkeys - Do I Wanna Know</h1>
+            <span onclick="closeModal(0)" class="closeModal">&times;</span> <!-- Fecha o modal -->
+            <img src="img/WannaKnow.jpg">
+            <h2>Artista: Arctic Monkeys<br>Ano: 2013<br>Gênero: Indie Rock</h2>
+            <a onclick="addRep(0)"><i class="fas fa-headphones"></i> Adicionar à lista de Reprodução</a>
+            <a onclick="PLlist(0)"><i class="fas fa-list"></i> Adicionar à Playlist</a>
+            <button class="btn-Embaixo" onclick="playNow(0)">PLAY</button>
+        </div>
+    </div>
+    <div id="m1Modal" class="modal">    <!-- Modal com informações da música -->
+        <div class="modal-content">
+            <h1>Drake - Nice For What</h1>
+            <span onclick="closeModal(1)" class="closeModal">&times;</span> <!-- Fecha o modal -->
+            <img src="img/Nice.jpg">
+            <h2>Artista: Drake<br>Ano: 2018<br>Gênero: Hip-hop</h2>
+            <a onclick="addRep(1)"><i class="fas fa-headphones"></i> Adicionar à lista de Reprodução</a>
+            <a onclick="PLlist(1)"><i class="fas fa-list"></i> Adicionar à Playlist</a>
+            <button class="btn-Embaixo" onclick="playNow(1)">PLAY</button>
+        </div>
+    </div>
+    <div id="m2Modal" class="modal">    <!-- Modal com informações da música -->
+        <div class="modal-content">
+            <h1>Drake - Legend</h1>
+            <span onclick="closeModal(2)" class="closeModal">&times;</span> <!-- Fecha o modal -->
+            <img src="img/Legend.jpg">
+            <h2>Artista: Drake<br>Ano: 2015<br>Gênero: Hip-hop</h2>
+            <a onclick="addRep(2)"><i class="fas fa-headphones"></i> Adicionar à lista de Reprodução</a>
+            <a onclick="PLlist(2)"><i class="fas fa-list"></i> Adicionar à Playlist</a>
+            <button class="btn-Embaixo" onclick="playNow(2)">PLAY</button>
+        </div>
+    </div>
+    <div id="m3Modal" class="modal">    <!-- Modal com informações da música -->
+        <div class="modal-content">
+            <h1>Migos - Walk It Talk It ft. Drake</h1>
+            <span onclick="closeModal(3)" class="closeModal">&times;</span> <!-- Fecha o modal -->
+            <img src="img/WalkIt.jpg">
+            <h2>Artista: Migos<br>Ano: 2018<br>Gênero: Trap, Hip-Hop</h2>
+            <a onclick="addRep(3)"><i class="fas fa-headphones"></i> Adicionar à lista de Reprodução</a>
+            <a onclick="PLlist(3)"><i class="fas fa-list"></i> Adicionar à Playlist</a>
+            <button class="btn-Embaixo" onclick="playNow(3)">PLAY</button>
+        </div>
+    </div>
+    <div id="m4Modal" class="modal">    <!-- Modal com informações da música -->
+        <div class="modal-content">
+            <h1>Kendrick Lamar - HUMBLE</h1>
+            <span onclick="closeModal(4)" class="closeModal">&times;</span> <!-- Fecha o modal -->
+            <img src="img/Humble.jpg">
+            <h2>Artista: Kendrick Lamar<br>Ano: 2017<br>Gênero: Hip-Hop</h2>
+            <a onclick="addRep(4)"><i class="fas fa-headphones"></i> Adicionar à lista de Reprodução</a>
+            <a onclick="PLlist(4)"><i class="fas fa-list"></i> Adicionar à Playlist</a>
+            <button class="btn-Embaixo" onclick="playNow(4)">PLAY</button>
+        </div>
+    </div>
+    <div id="m5Modal" class="modal">    <!-- Modal com informações da música -->
+        <div class="modal-content modal-direita">
+            <h1>Drake - God's Plan</h1>
+            <span onclick="closeModal(5)" class="closeModal">&times;</span> <!-- Fecha o modal -->
+            <img src="img/GodsPlan.jpg">
+            <h2>Artista: Drake<br>Ano: 2018<br>Gênero: Pop, Trap</h2>
+            <a onclick="addRep(5)"><i class="fas fa-headphones"></i> Adicionar à lista de Reprodução</a>
+            <a onclick="PLlist(5)"><i class="fas fa-list"></i> Adicionar à Playlist</a>
+            <button class="btn-Embaixo" onclick="playNow(5)">PLAY</button>
+        </div>
+    </div>
+    <div id="menu-musicas" class="nav">     <!-- Sidebar da esquerda com as músicas -->
+        <button class="btn close closeMobile" style="right:0;" onclick="closeSlideMenuL()">     <!-- Botão que esconde a sidebar -->
+            <i class="fas fa-times"></i>
+        </button>
+        <h1>Músicas</h1>
+        <div class="pesquisa">
+            <i class="fas fa-search fa-lg"></i>
+            <input type="text" placeholder="Buscar..." id="filtro" onkeyup="filtrar()"/>
+        </div>
+        <div class="lista" id="listaMusicas">
+            <p class="item-list" onclick="showModal(0)" id="musica0">Arctic Monkeys - Do I Wanna Know</p> 
+            <p class="item-list" onclick="showModal(1)" id="musica1">Drake - Nice For What</p>
+            <p class="item-list" onclick="showModal(2)" id="musica2">Drake - Legend</p>
+            <p class="item-list" onclick="showModal(3)" id="musica3">Migos - Walk It Talk It ft. Drake</p>
+            <p class="item-list" onclick="showModal(4)" id="musica4">Kendrick Lamar - HUMBLE</p>
+            <p class="item-list" onclick="showModal(5)" id="musica5">Drake - God's Plan</p>
+        </div>
+    </div>
+    <div id="menu-playlists" class="nav">       <!-- Sidebar da direita com as playlists -->
+        <button class="btn close closeMobile" style="left:0;" onclick="closeSlideMenuR()">      <!-- Botão que esconde a sidebar -->
+            <i class="fas fa-times"></i>
+        </button>
+        <h1>Playlists</h1>
+        <div class="lista">
+            <div class="btn-addmsc" id="playlists">Nenhuma playlist criada...</div>  <!-- Lista de playlists -->
+        </div>
+        <button class="btn-criarPL" onclick="showModal(6)"><i class="fas fa-plus-circle"></i> Criar Playlist</button>   <!-- Botão que abre modal de criar uma nova playlist -->
+    </div>
+    <div class="nav sombra" style="right:0"></div>
+    <div class="nav sombra" style="left:0"></div>
+    <div id="content">
+        <div id="m99Modal" class="modalSidebar">
+        </div>
+        <div id="m7Modal" class="modal">    <!-- Modal com informações e opções de cada playlist -->
+            <div class="modal-content centro">
+                <span onclick="closeModal(7)" class="closeModal">&times;</span>
+                <p id="opcoesPL"></p>
+            </div>
+        </div>
+        <div id="m6Modal" class="modal">    <!-- Modal para criação de uma nova playlist -->
+            <div class="modal-content centro">
+                <input type="text" id="NomePL" placeholder="Nome da Playlist..."/>
+                <span onclick="closeModal(6)" class="closeModal">&times;</span>
+                <div class="subLista">
+                    <p><label for="00"><input type="checkbox" name="musica" value="0" id="00">Arctic Monkeys - Do I Wanna Know</label></p>
+                    <p><label for="01"><input type="checkbox" name="musica" value="1" id="01">Drake - Nice For What</label></p>
+                    <p><label for="02"><input type="checkbox" name="musica" value="2" id="02">Drake - Legend</label></p>
+                    <p><label for="03"><input type="checkbox" name="musica" value="3" id="03">Migos - Walk It Talk It ft. Drake</label></p>
+                    <p><label for="04"><input type="checkbox" name="musica" value="4" id="04">Kendrick Lamar - HUMBLE</label></p>
+                    <p><label for="05"><input type="checkbox" name="musica" value="5" id="05">Drake - God's Plan</label></p>
+                </div> 
+                <button class="btn-Embaixo" onclick="createPL()">SALVAR</button>
+            </div>
+        </div>
+        <div id="m8Modal" class="modal">    <!-- Modal para adicionar música à uma playlist -->
+            <div class="modal-content centro">
+                <span onclick="closeModal(8)" class="closeModal">&times;</span>
+                <div class="lista subLista" id="PLlist"></div>
+                <p id="botaoAddPL"></p>
+            </div>
+        </div>
+        <div id="m9Modal" class="modal">    <!-- Modal com informações e opções de cada playlist -->
+            <div class="modal-content centro peq">
+                <span onclick="closeModal(9)" class="closeModal">&times;</span>
+                <p style="text-align: center" id="aviso"></p>
+                <a><button class="btn-Centro" onclick="closeModal(9)">OK</button></a>
+            </div>
+        </div>
+        <div class="container">
+            <div>
+                <div class="capa" id="capa"><img src="img/capa.jpg" /></div> <!-- Imagem de capa do álbum -->
+            </div>            
+            <div class="info">      <!-- Informações sobre a música atual -->
+                <p id="info-musica">Nenhuma faixa adicionada à lista de reprodução</p>
+                <div id="info-album">
+                    <p id="info-artista"></p>
+                    <p id="info-ano"></p>
+                    <p id="info-genero"></p>
+                </div>
+            </div>
+            <div class="sliderContainer">   <!-- Barra de reprodução -->
+                <div class="posSlider">
+                    <input class="sliderRep" type="range" min="0" max="100" value="0" id="sliderMusica">   <!-- Slider de duração da música -->
+                </div>
+                <p id="timerA">00:00</p>/
+                <p id="timerF">00:00</p>
+            </div>
+            <div class="player">        <!-- Botões do player -->
+                <i class="fas fa-stop" id="stopBtn"></i>
+                <i class="fas fa-step-backward" id="prevBtn"></i>
+                <i class="fas fa-play" id="playBtn"></i>
+                <i class="fas fa-pause" id="pauseBtn"></i>
+                <i class="fas fa-step-forward" id="nextBtn"></i>
+                <i class="fas fa-redo" id="repeatBtn"></i>
+                <i class="fas fa-sync" style="display:none" id="repeatPLBtn"></i>
+                <i class="fas fa-random" id="shuffleBtn"></i>
+            </div>
+            <div class="volume">    <!-- Volume -->
+                <h2 class="titulo">Lista de reprodução</h2>
+                <div class="posicaoVolume"> 
+                    <i class="fas fa-volume-up fa-lg" id="btnVolume"></i> <!-- Botão que ativa/desativa barra de volume -->
+                    <div class="barraVol">
+                        <input class="sliderVol" type="range" min="0" max="100" value="100" id="sliderVolume">    <!-- Slider de volume -->
+                    </div>
+                </div>
+            </div>
+            <div class="container2">
+                <div class="lista" id="repList"></div>
+                <label class="lista"><a class="btn-addmsc" onclick="openSlideMenuL()">+ Adicionar músicas à lista de reprodução</a></label>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.191 26.7">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e0e0e0;
+        opacity: 0.995;
+      }
+    </style>
+  </defs>
+  <path id="Icon_Arrow_Drop_Down" data-name="Icon / Arrow Drop Down" class="cls-1" d="M0,0,13.35,18.191,26.7,0Z" transform="translate(0 26.7) rotate(-90)"/>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.5 18">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #e0e0e0;
+        opacity: 0.995;
+      }
+
+      .cls-3 {
+        stroke: #e0e0e0;
+        stroke-width: 4px;
+      }
+    </style>
+  </defs>
+  <g id="Group_2" data-name="Group 2" transform="translate(15.5 18) rotate(180)">
+    <g id="Icon_Arrow_Right_Outlined" data-name="Icon / Arrow Right / Outlined" transform="translate(-582 -2299.5)">
+      <rect id="Box" class="cls-1" width="15" height="14" transform="translate(582 2300)"/>
+      <path id="Icon_Arrow_Drop_Down" data-name="Icon / Arrow Drop Down" class="cls-2" d="M111-20l8.721,12.261L128.443-20Z" transform="translate(602 2428) rotate(-90)"/>
+    </g>
+    <line id="Line_1" data-name="Line 1" class="cls-3" y2="18" transform="translate(13.5)"/>
+  </g>
+</svg>
